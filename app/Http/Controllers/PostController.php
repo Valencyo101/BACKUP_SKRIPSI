@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Posts;
 use App\Category;
 use App\Tags;
-use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 
@@ -32,7 +32,7 @@ class PostController extends Controller
     {
         $tags = Tags::all();
         $category = Category::all();
-        return view('admin.post.create', compact('category','tags'));
+        return view('admin.post.create', compact('category', 'tags'));
     }
 
     /**
@@ -53,10 +53,13 @@ class PostController extends Controller
         $gambar = $request->gambar;
         $new_gambar = time() . $gambar->getClientOriginalName();
 
+        $linkvid =   $this->extractYoutubeId($request->linkvid);
+
         $post = Posts::create([
             'judul' => $request->judul,
             'category_id' => $request->category_id,
             'content' => $request->content,
+            'linkvid' => $linkvid,
             'gambar' => 'public/uploads/posts/' . $new_gambar,
             'slug' => Str::slug($request->judul),
             'users_id' => Auth::id()
@@ -68,7 +71,6 @@ class PostController extends Controller
 
         // Redirect langsung ke halaman index dengan pesan sukses
         return redirect()->route('post.index')->with('success', 'Postingan Anda berhasil disimpan');
-
     }
 
     /**
@@ -93,7 +95,7 @@ class PostController extends Controller
         $category = Category::all();
         $tags = Tags::all();
         $post = Posts::findorfail($id);
-        return view('admin.post.edit', compact('post','tags','category'));
+        return view('admin.post.edit', compact('post', 'tags', 'category'));
     }
 
     /**
@@ -105,11 +107,11 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-         $this->validate($request, [
+        $this->validate($request, [
             'judul' => 'required',
             'category_id' => 'required',
             'content' => 'required'
-         ]);
+        ]);
 
 
 
@@ -117,24 +119,23 @@ class PostController extends Controller
 
         if ($request->has('gambar')) {
             $gambar = $request->gambar;
-            $new_gambar = time().$gambar->getClientOriginalName();
+            $new_gambar = time() . $gambar->getClientOriginalName();
             $gambar->move('public/uploads/posts/', $new_gambar);
 
-        $post_data = [
-            'judul' => $request->judul,
-            'category_id' =>  $request->category_id,
-            'content' =>  $request->content,
-            'gambar' => 'public/uploads/posts/'.$new_gambar,
-            'slug' => Str::slug($request->judul)
-        ];
-        }
-        else{
-        $post_data = [
-            'judul' => $request->judul,
-            'category_id' =>  $request->category_id,
-            'content' =>  $request->content,
-            'slug' => Str::slug($request->judul)
-        ];
+            $post_data = [
+                'judul' => $request->judul,
+                'category_id' =>  $request->category_id,
+                'content' =>  $request->content,
+                'gambar' => 'public/uploads/posts/' . $new_gambar,
+                'slug' => Str::slug($request->judul)
+            ];
+        } else {
+            $post_data = [
+                'judul' => $request->judul,
+                'category_id' =>  $request->category_id,
+                'content' =>  $request->content,
+                'slug' => Str::slug($request->judul)
+            ];
         }
 
 
@@ -142,9 +143,7 @@ class PostController extends Controller
         $post->update($post_data);
 
 
-        return redirect()->route('post.index')->with('success','Postingan anda berhasil diupdate');
-
-
+        return redirect()->route('post.index')->with('success', 'Postingan anda berhasil diupdate');
     }
 
     /**
@@ -158,25 +157,33 @@ class PostController extends Controller
         $post = Posts::findorfail($id);
         $post->delete();
 
-        return redirect()->back()->with('success','Post Berhasil Dihapus (Silahkan cek trashed post)');
+        return redirect()->back()->with('success', 'Post Berhasil Dihapus (Silahkan cek trashed post)');
     }
 
-    public function tampil_hapus(){
+    public function tampil_hapus()
+    {
         $post = Posts::onlyTrashed()->paginate(10);
         return view('admin.post.hapus', compact('post'));
     }
 
-    public function restore($id){
+    public function restore($id)
+    {
         $post = Posts::withTrashed()->where('id', $id)->first();
         $post->restore();
 
-        return redirect()->back()->with('success','Post Berhasil DiRestore (Silahkan cek list post)');
+        return redirect()->back()->with('success', 'Post Berhasil DiRestore (Silahkan cek list post)');
     }
 
-    public function kill($id){
+    public function kill($id)
+    {
         $post = Posts::withTrashed()->where('id', $id)->first();
         $post->forceDelete();
 
-        return redirect()->back()->with('success','Post Berhasil Dihapus Secara Permanen');
+        return redirect()->back()->with('success', 'Post Berhasil Dihapus Secara Permanen');
+    }
+    private function extractYoutubeId($url)
+    {
+        preg_match('/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^\s&]+)/', $url, $matches);
+        return $matches[1] ?? null;
     }
 }

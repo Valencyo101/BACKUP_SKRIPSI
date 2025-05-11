@@ -21,7 +21,6 @@ class BlogController extends Controller
     {
         $category_widget = Category::all();
         $data = Posts::where('slug', $slug)->get();
-
         return view('blog.isi_post', compact('data', 'category_widget'));
     }
 

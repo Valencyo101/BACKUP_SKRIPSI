@@ -19,7 +19,10 @@ class CreatePostsTable extends Migration
             $table->integer('category_id');
             $table->text('content');
             $table->string('gambar');
+            $table->string('linkvid');
+            $table->string('users_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -36,6 +36,8 @@
             <div class="section-row">
                 {!! $isi_post->content !!}
             </div>
+            <iframe id="ytplayer" type="text/html" width="640" height="360"
+                src="https://www.youtube.com/embed/{{ $isi_post->linkvid }}" frameborder="0"></iframe>
             <!-- Display Tags with Label -->
             @if ($isi_post->tags)
                 <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 1rem;">
