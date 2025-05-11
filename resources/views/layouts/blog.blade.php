@@ -28,16 +28,26 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CMuli:400,700" rel="stylesheet">
 
     <!-- Bootstrap -->
-    <link type="text/css" rel="stylesheet" href="{{ asset('public/frontend/css/bootstrap.min.css') }}" />
-
+    @if (!Request::is('/'))
+        <link type="text/css" rel="stylesheet" href="{{ asset('public/frontend/css/bootstrap.min.css') }}" />
+    @endif
+    @if (Request::is('/'))
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    @endif
     <!-- Font Awesome Icon -->
     <link rel="stylesheet" href="{{ asset('public/frontend/css/font-awesome.min.css') }}">
 
     <!-- Custom stlylesheet -->
-    <link type="text/css" rel="stylesheet" href="{{ asset('public/frontend/css/style.css') }}" />
-    @if (route('about'))
+    @if (Route::is('blog'))
+        <link type="text/css" rel="stylesheet" href="{{ asset('public/frontend/css/stylelanding.css') }}" />
+    @else
+        <link type="text/css" rel="stylesheet" href="{{ asset('public/frontend/css/style.css') }}" />
+    @endif
+    @if (Route::is('about'))
         <link rel="stylesheet" href="{{ asset('public\frontend\css\customstyle.css') }}">
     @endif
+    <link rel="icon" type="image/png" href="{{ asset('logo-kopi.png') }}">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -48,22 +58,33 @@
 </head>
 
 <body>
-    @include('blog.components.header')
     <!-- SECTION -->
-    <div class="section">
-        <!-- container -->
-        <div class="{{ Request::is('about') ? '' : 'container' }}">
-            {{-- <div class="{{ route('about') ? '' : 'container' }}"> --}}
-            <!-- row -->
-            <div id="hot-post" class="row hot-post">
-                <div>
-                    @yield('isi')
+    @if (Route::is('blog'))
+        <div>
+            @yield('isi')
+        </div>
+    @else
+        @include('blog.components.header')
+        <div class="section">
+            <!-- container -->
+            <div class="{{ Request::is('about') ? '' : 'container' }}">
+                {{-- <div class="{{ route('about') ? '' : 'container' }}"> --}}
+                <!-- row -->
+                <div id="hot-post" class="row hot-post">
+                    <div>
+                        @yield('isi')
+                    </div>
                 </div>
             </div>
         </div>
-        @include('blog.components.footer')
+    @endif
+
+    @include('blog.components.footer')
 </body>
 <!-- jQuery Plugins -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+</script>
 <script src="{{ asset('public/frontend/js/jquery.min.js') }}"></script>
 <script src="{{ asset('public/frontend/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('public/frontend/js/jquery.stellar.min.js') }}"></script>

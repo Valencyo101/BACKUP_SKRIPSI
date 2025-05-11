@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'BlogController@index');
+Route::get('/', 'BlogController@index')->name('blog');
 // Route::get('/isi_post', function(){
 //     return view('blog.isi_post');
 // });
@@ -23,9 +23,9 @@ Route::get('/about', 'BlogController@about')->name('about');
 
 
 
-Route::prefix('dashboard')->group(function(){
+Route::prefix('dashboard')->group(function () {
     Auth::routes();
-    Route::middleware('auth')->group(function(){
+    Route::middleware('auth')->group(function () {
 
         Route::get('/home', 'HomeController@index')->name('home');
         Route::resource('/category', 'CategoryController');
@@ -36,9 +36,5 @@ Route::prefix('dashboard')->group(function(){
         Route::delete('/post/kill/{id}', 'PostController@kill')->name('post.kill');
         Route::resource('/post', 'PostController');
         Route::resource('/user', 'UserController');
-
     });
-
 });
-
-
