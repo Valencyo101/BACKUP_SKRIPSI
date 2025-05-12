@@ -31,9 +31,9 @@
         </div>
         <!-- /PAGE HEADER -->
 
-        <div class="col-md-8 hot-post-left">
+        <div class="col">
             <br>
-            <div class="section-row">
+            <div class="p-2">
                 {!! $isi_post->content !!}
             </div>
             <iframe id="ytplayer" type="text/html" width="640" height="360"
@@ -44,7 +44,7 @@
                     <strong>Tags:</strong> <!-- Text "Tags:" before displaying the list of tags -->
                     @foreach ($isi_post->tags as $tag)
                         <h6 style="margin: 0">
-                            <span class="badge badge-info">{{ $tag->name }}</span>
+                            <span class="badge rounded-pill bg-secondary">{{ $tag->name }}</span>
                         </h6>
                     @endforeach
                 </div>
