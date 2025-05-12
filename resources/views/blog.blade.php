@@ -1,38 +1,7 @@
 @extends('layouts.blog')
 
 @section('isi')
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-        <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="#page-top">Srikandi</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="{{ route('blog') }}">Home</a></li>
-                    <li class="nav-item dropdown">
-                        <button class="nav-link dropdown-toggle" style="background-color: transparent; border: none;"
-                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            Kategori
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="left: auto;">
-                            @foreach ($category_widget as $result)
-                                <li>
-                                    <a class="dropdown-item" href="{{ route('blog.category', $result->slug) }}">
-                                        {{ $result->name }}
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('blog.list') }}">Post</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">About</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    @include('blog.components.navbar')
 
     <!-- Header Section -->
     <header class="masthead"
@@ -85,7 +54,7 @@
                 <!-- Catering Kopi -->
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="mt-5">
-                        <div class="mb-2"><i class="bi bi-cup-hot fs-1 text-warning"></i></div>
+                        <div class="mb-2"><i class="bi bi-cup-hot fs-1 text-primary"></i></div>
                         <h3 class="h4 mb-2">Catering Kopi</h3>
                         <p class="text-muted mb-0">Kamu bisa membawa kopi Srikandi ke acara kantor, pameran, atau momen
                             spesial lainnya.</p>
@@ -94,7 +63,7 @@
                 <!-- Coffee Pack -->
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="mt-5">
-                        <div class="mb-2"><i class="bi bi-bag fs-1 text-warning"></i></div>
+                        <div class="mb-2"><i class="bi bi-bag fs-1 text-primary"></i></div>
                         <h3 class="h4 mb-2">Coffee Pack</h3>
                         <p class="text-muted mb-0">Dalam kemasan 200gr atau 1kg, nikmati cita rasa kopi robusta pilihan dari
                             petani Srikandi.</p>
@@ -103,7 +72,7 @@
                 <!-- Workshop -->
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="mt-5">
-                        <div class="mb-2"><i class="bi bi-lightbulb fs-1 text-warning"></i></div>
+                        <div class="mb-2"><i class="bi bi-lightbulb fs-1 text-primary"></i></div>
                         <h3 class="h4 mb-2">Workshop</h3>
                         <p class="text-muted mb-0">Belajar mengenali cita rasa kopi, cara seduh manual, dan kisah petani
                             langsung dari sumbernya.</p>
@@ -112,7 +81,7 @@
                 <!-- Kemitraan -->
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="mt-5">
-                        <div class="mb-2"><i class="bi bi-people fs-1 text-warning"></i></div>
+                        <div class="mb-2"><i class="bi bi-people fs-1 text-primary"></i></div>
                         <h3 class="h4 mb-2">Kemitraan</h3>
                         <p class="text-muted mb-0">Tertarik jadi mitra atau pasok kopi lokal berkualitas? Kami siap bekerja
                             sama.</p>
@@ -121,4 +90,75 @@
             </div>
         </div>
     </section>
+
+    <div id="portfolio">
+        <div class="container-fluid p-0">
+            <div class="row g-0">
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="{{ asset('public/frontend/img/Pohonkopi.jpg') }}" title="Project Name">
+                        <img class="img-fluid fixed-img" src="{{ asset('public/frontend/img/Pohonkopi.jpg') }}"
+                            alt="...">
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-white-50">Category</div>
+                            <div class="project-name">Project Name</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="{{ asset('public/frontend/img/kebun-kopi.png') }}" title="Project Name">
+                        <img class="img-fluid fixed-img" src="{{ asset('public/frontend/img/kebun-kopi.png') }}"
+                            alt="...">
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-white-50">Category</div>
+                            <div class="project-name">Project Name</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="{{ asset('public/frontend/img/kebun-kopi-2.png') }}"
+                        title="Project Name">
+                        <img class="img-fluid fixed-img" style="object-fit: cover"
+                            src="{{ asset('public/frontend/img/kebun-kopi-2.png') }}" alt="...">
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-white-50">Category</div>
+                            <div class="project-name">Project Name</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="{{ asset('public/frontend/img/kebun-kopi-2.png') }}"
+                        title="Project Name">
+                        <img class="img-fluid fixed-img" style="object-fit: cover"
+                            src="{{ asset('public/frontend/img/kebun-kopi-2.png') }}" alt="...">
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-white-50">Category</div>
+                            <div class="project-name">Project Name</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="{{ asset('public/frontend/img/kebun-kopi.png') }}"
+                        title="Project Name">
+                        <img class="img-fluid fixed-img" src="{{ asset('public/frontend/img/kebun-kopi.png') }}"
+                            alt="...">
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-white-50">Category</div>
+                            <div class="project-name">Project Name</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="{{ asset('public/frontend/img/kebun-kopi.png') }}"
+                        title="Project Name">
+                        <img class="img-fluid fixed-img" src="{{ asset('public/frontend/img/kebun-kopi.png') }}"
+                            alt="...">
+                        <div class="portfolio-box-caption p-3">
+                            <div class="project-category text-white-50">Category</div>
+                            <div class="project-name">Project Name</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

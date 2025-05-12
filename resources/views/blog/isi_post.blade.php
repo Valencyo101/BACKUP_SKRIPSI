@@ -50,6 +50,5 @@
                 </div>
             @endif
         </div>
-        @include('template_blog.widget')
     @endforeach
 @endsection

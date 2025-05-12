@@ -1,11 +1,21 @@
 @extends('layouts.blog')
 @section('isi')
-    <div class="col-md-8 hot-post-left">
-
+    <div class="row">
+        <div class="d-flex justify-content-center">
+            @if (Route::is('blog.category'))
+                <h1 class="text-center">Daftar Post Kategori</h1>
+            @else
+                <h1 class="text-center">Daftar Post</h1>
+            @endif
+        </div>
 
         @foreach ($data as $list_post)
-            <div class="post post-row">
+            <div class="col-md-4 post post-col shadow-sm">
                 <a class="post-img" href="{{ route('blog.isi', $list_post->slug) }} "><img
+                        style="width: 100%;
+                    height: 25vh;
+                    object-fit: cover;
+                    object-position: center;"
                         src="{{ asset($list_post->gambar) }}" alt="{{ $list_post->judul }}"></a>
                 <div class="post-body">
                     <div class="post-category">
@@ -23,7 +33,7 @@
         @endforeach
         <center>{{ $data->links() }}</center>
     </div>
-    @include('template_blog.widget')
+
 
     <!-- /post -->
 @endsection
