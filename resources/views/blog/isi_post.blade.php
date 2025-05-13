@@ -9,6 +9,7 @@
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
+            z-index:-1;
         "
                 data-stellar-background-ratio="0.5">
             </div>
@@ -33,7 +34,7 @@
 
         <div class="col">
             <br>
-            <div class="p-2">
+            <div class="p-2" style="word-wrap: break-word">
                 {!! $isi_post->content !!}
             </div>
             <iframe id="ytplayer" type="text/html" width="640" height="360"

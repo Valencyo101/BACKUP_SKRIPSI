@@ -95,7 +95,7 @@
         <div class="container-fluid p-0">
             <div class="row g-0">
                 <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="{{ asset('public/frontend/img/Pohonkopi.jpg') }}" title="Project Name">
+                    <a class="portfolio-box" href="{{ asset('public/frontend/img/halal.png') }}" title="Project Name">
                         <img class="img-fluid fixed-img" src="{{ asset('public/frontend/img/Pohonkopi.jpg') }}"
                             alt="...">
                         <div class="portfolio-box-caption">
