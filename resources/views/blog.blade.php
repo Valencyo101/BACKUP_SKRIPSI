@@ -16,7 +16,6 @@
                     <p class="text-white-75 mb-5">KSU Srikandi memproduksi kopi berkualitas tinggi langsung dari tangan
                         petani lokal. Kami mendukung pertanian berkelanjutan dan memberdayakan petani perempuan di lereng
                         Nusantara.</p>
-                    <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
                 </div>
             </div>
         </div>
@@ -37,10 +36,8 @@
                     <a class="btn btn-light btn-xl" href="{{ route('about') }}">Find Out More</a>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-6">
-                <img class="img-fluid"
-                    src="https://tse4.mm.bing.net/th/id/OIP.5LmX5YaqjoGaFpyqJed5XwHaFj?cb=iwp2&rs=1&pid=ImgDetMain"
-                    alt="Cerita KSU Srikandi">
+            <div class="col-md-4 col-lg-4">
+                <img class="img-fluid" src="{{ asset('public/frontend/img/Srikandi 33.jpg') }}" alt="Cerita KSU Srikandi">
             </div>
         </div>
     </section>
@@ -95,70 +92,100 @@
         <div class="container-fluid p-0">
             <div class="row g-0">
                 <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="{{ asset('public/frontend/img/halal.png') }}" title="Project Name">
-                        <img class="img-fluid fixed-img" src="{{ asset('public/frontend/img/Pohonkopi.jpg') }}"
-                            alt="...">
+                    <a class="portfolio-box" href="{{ asset('public/frontend/img/Step1.jpeg') }}" title="Project Name">
+                        <img class="img-fluid fixed-img" src="{{ asset('public/frontend/img/Step1.jpeg') }}" alt="...">
                         <div class="portfolio-box-caption">
-                            <div class="project-category text-white-50">Category</div>
-                            <div class="project-name">Project Name</div>
+                            <div class="project-name">Harvest The Ripe Cherries</div>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="{{ asset('public/frontend/img/kebun-kopi.png') }}" title="Project Name">
-                        <img class="img-fluid fixed-img" src="{{ asset('public/frontend/img/kebun-kopi.png') }}"
-                            alt="...">
+                    <a class="portfolio-box" href="{{ asset('public/frontend/img/Step3.jpg') }}" title="Project Name">
+                        <img class="img-fluid fixed-img" src="{{ asset('public/frontend/img/Step3.jpg') }}" alt="...">
                         <div class="portfolio-box-caption">
-                            <div class="project-category text-white-50">Category</div>
-                            <div class="project-name">Project Name</div>
+                            <div class="project-name">Dry The Parchment</div>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="{{ asset('public/frontend/img/kebun-kopi-2.png') }}"
-                        title="Project Name">
+                    <a class="portfolio-box" href="{{ asset('public/frontend/img/step4.png') }}" title="Project Name">
                         <img class="img-fluid fixed-img" style="object-fit: cover"
-                            src="{{ asset('public/frontend/img/kebun-kopi-2.png') }}" alt="...">
+                            src="{{ asset('public/frontend/img/step4.png') }}" alt="...">
                         <div class="portfolio-box-caption">
-                            <div class="project-category text-white-50">Category</div>
-                            <div class="project-name">Project Name</div>
+                            <div class="project-name">Sort The Defect Beans</div>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="{{ asset('public/frontend/img/kebun-kopi-2.png') }}"
-                        title="Project Name">
+                    <a class="portfolio-box" href="{{ asset('public/frontend/img/Step5.png') }}" title="Project Name">
                         <img class="img-fluid fixed-img" style="object-fit: cover"
-                            src="{{ asset('public/frontend/img/kebun-kopi-2.png') }}" alt="...">
+                            src="{{ asset('public/frontend/img/Step5.png') }}" alt="...">
                         <div class="portfolio-box-caption">
-                            <div class="project-category text-white-50">Category</div>
-                            <div class="project-name">Project Name</div>
+                            <div class="project-name">Roast Coffee Beans</div>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="{{ asset('public/frontend/img/kebun-kopi.png') }}"
-                        title="Project Name">
-                        <img class="img-fluid fixed-img" src="{{ asset('public/frontend/img/kebun-kopi.png') }}"
-                            alt="...">
+                    <a class="portfolio-box" href="{{ asset('public/frontend/img/step6.png') }}" title="Project Name">
+                        <img class="img-fluid fixed-img" src="{{ asset('public/frontend/img/step6.png') }}" alt="...">
                         <div class="portfolio-box-caption">
-                            <div class="project-category text-white-50">Category</div>
-                            <div class="project-name">Project Name</div>
+                            <div class="project-name">Packing</div>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="{{ asset('public/frontend/img/kebun-kopi.png') }}"
-                        title="Project Name">
-                        <img class="img-fluid fixed-img" src="{{ asset('public/frontend/img/kebun-kopi.png') }}"
+                    <a class="portfolio-box" href="{{ asset('public/frontend/img/Step8.png') }}" title="Project Name">
+                        <img class="img-fluid fixed-img" src="{{ asset('public/frontend/img/Step8.png') }}"
                             alt="...">
                         <div class="portfolio-box-caption p-3">
-                            <div class="project-category text-white-50">Category</div>
-                            <div class="project-name">Project Name</div>
+                            <div class="project-name">Ready To Sell</div>
                         </div>
                     </a>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Bagian Kontak (Contact Us) -->
+    <section style="background-color: hsl(22, 100%, 49%); padding: 40px 0; text-align: center;">
+        <h2 style="color: white; font-size: 36px; margin: 0;">CONTACT US</h2>
+        <hr style="width: 60px; border: 2px solid white; margin: 16px auto;">
+    </section>
+
+    <section style="background-color: white; padding: 40px 0; text-align: center;">
+        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 60px;">
+
+            <!-- Instagram -->
+            <div>
+                <a href="https://www.instagram.com/kopsen.srikandiulubelu/" target="_blank"
+                    style="text-decoration: none;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"
+                        style="width: 40px; height: 40px;">
+                    <p style="color: gray; margin: 8px 0 4px;">INSTAGRAM</p>
+                    <p style="color: #f8b500; font-weight: bold;">@kopsensrikandiulubelu</p>
+                </a>
+            </div>
+
+            <!-- Facebook -->
+            <div>
+                <a href="https://web.facebook.com/sriwahyunisienar.alumunium" target="_blank"
+                    style="text-decoration: none;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook"
+                        style="width: 40px; height: 40px;">
+                    <p style="color: gray; margin: 8px 0 4px;">FACEBOOK</p>
+                    <p style="color: #f8b500; font-weight: bold;">Sri Wahyuni</p>
+                </a>
+            </div>
+
+            <!-- Email -->
+            <div>
+                <a href="mailto:KSUSrikandi@gmail.com" style="text-decoration: none;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"
+                        style="width: 40px; height: 40px;">
+                    <p style="color: gray; margin: 8px 0 4px;">EMAIL</p>
+                    <p style="color: #f8b500; font-weight: bold;">KSUSrikandi@gmail.com</p>
+                </a>
+            </div>
+
+        </div>
+    </section>
 @endsection
