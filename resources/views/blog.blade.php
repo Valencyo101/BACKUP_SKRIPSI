@@ -88,6 +88,14 @@
         </div>
     </section>
 
+    <!-- GALLERY TITLE SECTION -->
+    <section class="text-center my-5">
+        <div style="color: #f4b400; font-weight: bold; letter-spacing: 1px;">MOMENTS</div>
+        <h2 style="color: #999; font-weight: bold; font-size: 2.5rem;">GALLERY</h2>
+        <div style="width: 60px; height: 6px; background-color: #f4b400; margin: 0 auto;"></div>
+    </section>
+
+    <!-- PORTFOLIO GRID SECTION -->
     <div id="portfolio">
         <div class="container-fluid p-0">
             <div class="row g-0">
@@ -127,7 +135,8 @@
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <a class="portfolio-box" href="{{ asset('public/frontend/img/step6.png') }}" title="Project Name">
-                        <img class="img-fluid fixed-img" src="{{ asset('public/frontend/img/step6.png') }}" alt="...">
+                        <img class="img-fluid fixed-img" src="{{ asset('public/frontend/img/step6.png') }}"
+                            alt="...">
                         <div class="portfolio-box-caption">
                             <div class="project-name">Packing</div>
                         </div>
@@ -145,47 +154,46 @@
             </div>
         </div>
     </div>
+
     <!-- Bagian Kontak (Contact Us) -->
-    <section style="background-color: hsl(22, 100%, 49%); padding: 40px 0; text-align: center;">
-        <h2 style="color: white; font-size: 36px; margin: 0;">CONTACT US</h2>
-        <hr style="width: 60px; border: 2px solid white; margin: 16px auto;">
-    </section>
+    <section style="background-color: #ff6a00; padding: 60px 0; text-align: center;">
+        <div class="container">
+            <h2 style="color: white; font-size: 36px; margin-bottom: 10px;">CONTACT US</h2>
+            <hr style="width: 60px; border: 2px solid white; margin: 16px auto 40px auto;">
 
-    <section style="background-color: white; padding: 40px 0; text-align: center;">
-        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 60px;">
+            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 60px;">
+                <!-- Instagram -->
+                <div style="text-align: center; width: 180px;">
+                    <a href="https://www.instagram.com/kopsen.srikandiulubelu/" target="_blank"
+                        style="text-decoration: none;">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"
+                            style="width: 48px; height: 48px; margin-bottom: 10px;">
+                        <p style="color: white; margin: 0; font-weight: bold; font-size: 14px;">INSTAGRAM</p>
+                        <p style="color: #fffde7; font-size: 16px; font-weight: 500;">@kopsensrikandiulubelu</p>
+                    </a>
+                </div>
 
-            <!-- Instagram -->
-            <div>
-                <a href="https://www.instagram.com/kopsen.srikandiulubelu/" target="_blank"
-                    style="text-decoration: none;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"
-                        style="width: 40px; height: 40px;">
-                    <p style="color: gray; margin: 8px 0 4px;">INSTAGRAM</p>
-                    <p style="color: #f8b500; font-weight: bold;">@kopsensrikandiulubelu</p>
-                </a>
+                <!-- Facebook -->
+                <div style="text-align: center; width: 180px;">
+                    <a href="https://web.facebook.com/sriwahyunisienar.alumunium" target="_blank"
+                        style="text-decoration: none;">
+                        <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook"
+                            style="width: 48px; height: 48px; margin-bottom: 10px;">
+                        <p style="color: white; margin: 0; font-weight: bold; font-size: 14px;">FACEBOOK</p>
+                        <p style="color: #fffde7; font-size: 16px; font-weight: 500;">Sri Wahyuni</p>
+                    </a>
+                </div>
+
+                <!-- Email -->
+                <div style="text-align: center; width: 180px;">
+                    <a href="mailto:KSUSrikandi@gmail.com" style="text-decoration: none;">
+                        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"
+                            style="width: 48px; height: 48px; margin-bottom: 10px;">
+                        <p style="color: white; margin: 0; font-weight: bold; font-size: 14px;">EMAIL</p>
+                        <p style="color: #fffde7; font-size: 16px; font-weight: 500;">KSUSrikandi@gmail.com</p>
+                    </a>
+                </div>
             </div>
-
-            <!-- Facebook -->
-            <div>
-                <a href="https://web.facebook.com/sriwahyunisienar.alumunium" target="_blank"
-                    style="text-decoration: none;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook"
-                        style="width: 40px; height: 40px;">
-                    <p style="color: gray; margin: 8px 0 4px;">FACEBOOK</p>
-                    <p style="color: #f8b500; font-weight: bold;">Sri Wahyuni</p>
-                </a>
-            </div>
-
-            <!-- Email -->
-            <div>
-                <a href="mailto:KSUSrikandi@gmail.com" style="text-decoration: none;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"
-                        style="width: 40px; height: 40px;">
-                    <p style="color: gray; margin: 8px 0 4px;">EMAIL</p>
-                    <p style="color: #f8b500; font-weight: bold;">KSUSrikandi@gmail.com</p>
-                </a>
-            </div>
-
         </div>
     </section>
 @endsection
