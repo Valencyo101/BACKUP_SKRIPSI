@@ -1,6 +1,7 @@
 <!-- FOOTER -->
 {{-- <footer id="footer" style="background-color: #000; color: #fff; padding: 40px 0; {{ route('about') ? 'margin-top : 0 !important' : '' }}"> --}}
-<footer id="footer" style="background-color: #000; color: #fff; padding: 40px 0;">
+<footer id="footer"
+    style="background-color: #000; color: #fff; padding: 40px 0; {{ Route::is('blog') ? 'margin-top: 0;' : '' }}">
     <div class="container">
         <div class="row">
 

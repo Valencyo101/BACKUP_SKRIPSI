@@ -27,7 +27,7 @@ class BlogController extends Controller
     public function list_blog()
     {
         $category_widget = Category::all();
-        $data = Posts::latest()->paginate(5);
+        $data = Posts::latest()->paginate(6);
 
         return view('blog.list_post', compact('data', 'category_widget'));
     }
@@ -35,7 +35,7 @@ class BlogController extends Controller
     public function list_category(category $category)
     {
         $category_widget = Category::all();
-        $data = $category->posts()->paginate();
+        $data = $category->posts()->paginate(6);
 
         return view('blog.list_post', compact('data', 'category_widget'));
     }
@@ -53,5 +53,9 @@ class BlogController extends Controller
     {
         $category_widget = Category::all();
         return view('blog.about', compact('category_widget'));
+    }
+    public function outlet()
+    {
+        return view('blog.outlet');
     }
 }

@@ -45,7 +45,7 @@
     <!-- Services Section -->
     <section class="page-section" id="services">
         <div class="container px-4 px-lg-5">
-            <h2 class="text-center mt-0">Layanan Kami</h2>
+            <h2 class="text-center mt-0" style="color: #999; font-weight: bold; font-size: 2.5rem;">Layanan Kami</h2>
             <hr class="divider">
             <div class="row gx-4 gx-lg-5">
                 <!-- Catering Kopi -->
@@ -90,9 +90,10 @@
 
     <!-- GALLERY TITLE SECTION -->
     <section class="text-center my-5">
-        <div style="color: #f4b400; font-weight: bold; letter-spacing: 1px;">MOMENTS</div>
-        <h2 style="color: #999; font-weight: bold; font-size: 2.5rem;">GALLERY</h2>
-        <div style="width: 60px; height: 6px; background-color: #f4b400; margin: 0 auto;"></div>
+        <div class="text-primary" style="color: font-weight: bold; letter-spacing: 1px;">MOMENTS</div>
+        <h2 style="color: #999; font-weight: bold; font-size: 2.5rem;">GALLERY PEMBUATAN KOPI</h2>
+        {{-- <div class="bg-primary" style="width: 60px; height: 6px; margin: 0 auto;"></div> --}}
+        <hr class="divider">
     </section>
 
     <!-- PORTFOLIO GRID SECTION -->
